@@ -1,4 +1,4 @@
-name: Verilator-build
+name: Chisel-test
 
 on: [push]
 
@@ -23,8 +23,10 @@ jobs:
           make -j 2
           sudo make install
           verilator --version
-      - name: Install sbt & run test
+      - name: Install sbt
         run: |
           wget https://piccolo.link/sbt-1.2.8.tgz
           tar xf sbt-1.2.8.tgz
+      -name: Run test
+        run:
           ./sbt/bin/sbt "test"

@@ -41,7 +41,7 @@ class GCDUnitTester(c: GCD) extends PeekPokeTester(c) {
       step(1)
       poke(gcd.io.loadingValues, 0)
 
-      val (expected_gcd, steps) = computeGcd(i, j + 1)
+      val (expected_gcd, steps) = computeGcd(i, j)
 
       step(steps - 1) // -1 is because we step(1) already to toggle the enable
       expect(gcd.io.outputGCD, expected_gcd)
