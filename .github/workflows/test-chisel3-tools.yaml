@@ -15,6 +15,7 @@ jobs:
           docker run ucbbar/chisel3-tools
       - name: Check verilator
         run:
+          export PATH="/opt/verilator/verilator_4_016/bin:/opt/yosys/bin:$PATH"
           verilator --version
       - name: Run test
         run:
