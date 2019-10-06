@@ -12,7 +12,7 @@ jobs:
       - name: Docket pull and run
         run: |
           docker pull ucbbar/chisel3-tools
-          docker run
+          docker run ucbbar/chisel3-tools
       - name: Run test
         run:
           sbt "test"
