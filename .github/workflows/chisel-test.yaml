@@ -1,4 +1,4 @@
-name: GCD-test
+name: Apt-trial
 
 on: [push]
 
@@ -9,8 +9,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Run a multi-line script
-        run: |
-          sudo apt install java-common,
-          sbt "test",
-
+      - name: Check apt sbt
+        run:
+          sudo apt search java
+      - name: Check apt sbt
+        run:
+          sudo apt search sbt

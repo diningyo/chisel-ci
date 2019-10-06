@@ -21,4 +21,30 @@ ChiselのCI環境を構築するためのお試し環境
 
 タスクの詳細を開いてみると" successful 12 minutes ago in 4s "と出て成功していた。
 
-![CIタスクの詳細](img/github_actions_success.png)
+![CIワークフローの詳細](img/github_actions_success.png)
+
+## main.yamlを確認
+
+実行されたCIワークフローは以下の様なもの。
+[github actionsで実際に実行されたワークフロー](https://github.com/diningyo/chisel-ci/commit/6cc47d53a56f08e1a4687b85967161fb35e83e31/checks?check_suite_id=252554143)と併せて確認すると、何も知らなくてもなんとなく感じ。
+
+```yaml
+name: CI # ワークフローの名称
+
+on: [push] # トリガーアクション。今回はpush時に実行
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest # 最新版のUbuntuで実行する
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script # 1行のスクリプトを実行
+      run: echo Hello, world!
+    - name: Run a multi-line script # 複数行のスクリプトを実行
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+```
+
