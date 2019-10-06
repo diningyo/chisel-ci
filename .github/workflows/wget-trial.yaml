@@ -1,0 +1,16 @@
+name: Chisel-test
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Extract riscv-tests
+        run: |
+          wget https://github.com/diningyo/misc-data/archive/master.zip
+          unzip master.zip
+          ls
