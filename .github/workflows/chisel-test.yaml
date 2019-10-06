@@ -1,0 +1,16 @@
+name: GCD-test
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run a multi-line script
+        run: |
+          sudo apt install java-common sbt,
+          sbt "test",
+
