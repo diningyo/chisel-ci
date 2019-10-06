@@ -15,3 +15,5 @@ jobs:
           sudo apt update
           apt search sbt
           apt search verilator
+          sudo apt install verilator
+          verilator --version
