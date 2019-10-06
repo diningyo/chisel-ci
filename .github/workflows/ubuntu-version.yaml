@@ -11,6 +11,6 @@ jobs:
       - uses: actions/checkout@v1
       - name: Check java
         run: |
-          uname -a,
-          sudo apt update,
-          sudo apt search sbt,
+          uname -a
+          sudo apt update
+          sudo apt search sbt
