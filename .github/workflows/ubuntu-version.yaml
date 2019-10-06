@@ -1,4 +1,4 @@
-name: Java-check
+name: Ubuntu-check
 
 on: [push]
 
@@ -13,4 +13,5 @@ jobs:
         run: |
           uname -a
           sudo apt update
-          sudo apt search sbt
+          apt search sbt
+          apt search verilator
