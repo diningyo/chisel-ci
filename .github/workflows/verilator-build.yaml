@@ -9,6 +9,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - name: Display CPU info.
+        run:
+          cat /proc/cpuinfo
       - name: Build verilator
         run: |
           cat /proc/cpuinfo
@@ -17,6 +20,6 @@ jobs:
           tar xf verilator-4.018.tgz
           cd verilator-4.018
           ./configure
-          make -j 2
+          make -j 3
           sudo make install
           verilator --version
