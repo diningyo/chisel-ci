@@ -13,4 +13,5 @@ jobs:
         run: |
           git clone https://github.com/diningyo/misc-data.git
           tar Jxf misc-data/isa.tar.xz
+          ls -l
           ls -l misc-data
