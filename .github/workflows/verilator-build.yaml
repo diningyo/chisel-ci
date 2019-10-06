@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Build verilator
         run: |
-          sudo apt install flex bison
+          #sudo apt install flex bison
           wget https://www.veripool.org/ftp/verilator-4.018.tgz
           tar xf verilator-4.018.tgz
           cd verilator-4.018
