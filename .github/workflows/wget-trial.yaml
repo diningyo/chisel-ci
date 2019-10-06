@@ -1,4 +1,4 @@
-name: Chisel-test
+name: wget-test
 
 on: [push]
 
