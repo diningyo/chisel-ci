@@ -1,0 +1,16 @@
+name: Java-check
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Check java
+        run: |
+          uname -a,
+          sudo apt update,
+          sudo apt search sbt,
