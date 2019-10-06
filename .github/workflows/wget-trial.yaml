@@ -1,4 +1,4 @@
-name: wget-test
+name: git-clone
 
 on: [push]
 
@@ -11,6 +11,4 @@ jobs:
       - uses: actions/checkout@v1
       - name: Extract riscv-tests
         run: |
-          wget https://github.com/diningyo/misc-data/archive/master.zip
-          unzip master.zip
-          ls
+          git clone https://github.com/diningyo/misc-data.git
