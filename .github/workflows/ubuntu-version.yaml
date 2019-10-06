@@ -1,4 +1,4 @@
-name: Ubuntu-check
+name: Verilator-build
 
 on: [push]
 
@@ -9,11 +9,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Check java
+      - name: Build verilator
         run: |
-          uname -a
-          sudo apt update
-          apt search sbt
-          apt search verilator
-          sudo apt install verilator
+          wget https://www.veripool.org/ftp/verilator-4.018.tgz
+          tar xf verilator-4.018.tgz
+          cd verilator-4.018
+          ./configure
+          make -j && sudo make install
           verilator --version
