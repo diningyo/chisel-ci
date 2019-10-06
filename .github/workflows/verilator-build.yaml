@@ -9,12 +9,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Display CPU info.
-        run:
-          cat /proc/cpuinfo
       - name: Build verilator
         run: |
-          cat /proc/cpuinfo
           sudo apt install flex bison
           wget https://www.veripool.org/ftp/verilator-4.018.tgz
           tar xf verilator-4.018.tgz
