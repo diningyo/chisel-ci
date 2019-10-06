@@ -20,6 +20,6 @@ jobs:
           tar xf verilator-4.018.tgz
           cd verilator-4.018
           ./configure
-          make -j 3
+          make -j
           sudo make install
           verilator --version
