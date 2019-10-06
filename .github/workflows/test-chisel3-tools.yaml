@@ -1,0 +1,18 @@
+name: Chisel-test-with-chisel3-tools
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Docket pull and run
+        run: |
+          docker pull ucbbar/chisel3-tools
+          docker run
+      - name: Run test
+        run:
+          sbt "test"
