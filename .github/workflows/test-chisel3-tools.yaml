@@ -13,6 +13,8 @@ jobs:
         run: |
           docker pull ucbbar/chisel3-tools
           docker run ucbbar/chisel3-tools
+          cd /
+          find -name "verilator"
           ls /opt/verilator/
           export PATH="/opt/verilator/verilator_4_016/bin:/opt/yosys/bin:$PATH"
           /opt/verilator/verilator_4_016/bin/verilator --version
