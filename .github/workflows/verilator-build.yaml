@@ -9,9 +9,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - name: Install Dependancy
+        run: |
+          sudo apt install flex bison gpg
       - name: Build verilator
         run: |
-          sudo apt install flex bison
           wget https://www.veripool.org/ftp/verilator-4.018.tgz
           tar xf verilator-4.018.tgz
           cd verilator-4.018
@@ -21,8 +23,10 @@ jobs:
           verilator --version
       - name: Install sbt
         run: |
-          wget https://piccolo.link/sbt-1.2.8.tgz
-          tar xf sbt-1.2.8.tgz
+          echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+          sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
+          sudo apt update
+          sudo apt install sbt
       - name: Run test
         run:
-          ./sbt/bin/sbt "test"
+          sbt "test"
